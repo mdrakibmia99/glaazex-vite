@@ -197,16 +197,8 @@ export const categories=[
     }
     
 ]
+ 
 
-
-export const cartItems = [
-    { id: 1, imageUrl: 'https://backend.pndservicebd.com//storage/upload/products/thumbnail/1768153516227703.jpeg', alt: 'Image 1' },
-    { id: 3, imageUrl: 'https://backend.pndservicebd.com//storage/upload/products/thumbnail/1757077559730677.jpeg', alt: 'Image 3' },
-    { id: 4, imageUrl: 'https://backend.pndservicebd.com//storage/upload/products/thumbnail/1734343581280409.jpg', alt: 'Image 3' },
-    { id: 2, imageUrl: 'https://backend.pndservicebd.com//storage/upload/products/multi-image/1734710256623680.jpg', alt: 'Image 2' },
-    { id: 5, imageUrl: 'https://backend.pndservicebd.com//storage/upload/products/multi-image/1734343581408951.jpg', alt: 'Image 3' },
-    // Add more cart items as needed
-];
 
 // create databases data 
 export const allProductData = [
