@@ -1,15 +1,17 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../contexts/UserContext";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
 
 const Registration = () => {
-  const { createUser ,emailVerify} = useContext(AuthContext)
+  const { user,createUser ,emailVerify} = useContext(AuthContext)
   const { register,reset, handleSubmit, formState: { errors } } = useForm()
-
+ const navigate=useNavigate()
   const [showPassword, setShowPassword] = useState(false);
-
+  if(user?.emailVerified){
+    navigate('/')
+  }
   const handleRegistration = (data) => {
      console.log(data,'registration data now ')
     createUser(data.email, data.password)

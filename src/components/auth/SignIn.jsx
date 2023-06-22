@@ -6,11 +6,14 @@ import { toast } from "react-hot-toast";
 
 
 const SignIn = () => {
-  const { signIn } = useContext(AuthContext)
+  const {user, signIn } = useContext(AuthContext)
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  if(user?.emailVerified){
+    navigate('/')
+  }
   const handleLogin = (e) => {
     e.preventDefault()
     signIn(email, password)
