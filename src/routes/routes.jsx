@@ -1,22 +1,53 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../layout/Main";
-import Home from "../components/Home";
-import Login from "../components/auth/Login";
+import { lazy, Suspense } from "react";
+import Registration from "../components/auth/Registration";
+import SignIn from "../components/auth/SignIn";
+import HomeLoading from "../components/Loading/HomeLoading";
+import CategoryAllProduct from "../components/CategoryAllProduct/CategoryAllProduct";
+import AllSubCategory from "../components/AllSubCategory/AllSubCategory";
+import ProductDetail from "../components/productDetails/ProductDetail";
+const Home = lazy(() => import("../components/Home"));
 
 const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Main />,
-      children: [
-        {
-          path: "/",
-          element: <Home />,
-        },
-        {
-          path: "login",
-          element: <Login />,
-        },
-      ],
-    },
-  ]);
-  export default router
+  {
+    path: "/",
+    element: <Main />,
+    children: [
+      {
+        path: "/",
+        element: (
+          <Suspense fallback={<HomeLoading />}>
+            <Home />
+          </Suspense>
+        ),
+      },
+      {
+        path: "login",
+        element: <SignIn />,
+      },
+      {
+        path: "/registration",
+        element: <Registration />,
+      },
+      {
+        path: "/allProducts/:productType",
+        element: (<Suspense fallback={<HomeLoading />}>
+          <CategoryAllProduct />,
+        </Suspense>)
+      },
+      {
+        path: "/sub_category/:subCat",
+        element: (
+          <Suspense fallback={<HomeLoading />}>
+            <AllSubCategory />
+          </Suspense>),
+      },
+      {
+        path: "/product/:id",
+        element: <ProductDetail />,
+      },
+    ],
+  },
+]);
+export default router

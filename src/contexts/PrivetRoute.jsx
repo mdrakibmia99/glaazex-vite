@@ -2,14 +2,15 @@
 import { useContext } from "react"
 import { AuthContext } from "./UserContext"
 import { Navigate } from "react-router-dom"
+import HomeLoading from "../components/Loading/HomeLoading"
 
 const PrivetRoute = ({children}) => {
     const {user,loading}=useContext(AuthContext)
     if(loading){
 
-        return <div>Loading...</div>
+        return <HomeLoading/>
     }
-    if(!user && user.uid){
+    if(user && user.uid){
         return children
     }
     return  <Navigate to={'/login'}/>
