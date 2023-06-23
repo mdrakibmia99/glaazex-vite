@@ -5,15 +5,15 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
 
 const Registration = () => {
-  const { user,createUser ,emailVerify} = useContext(AuthContext)
-  const { register,reset, handleSubmit, formState: { errors } } = useForm()
- const navigate=useNavigate()
+  const { user, createUser, emailVerify } = useContext(AuthContext)
+  const { register, reset, handleSubmit, formState: { errors } } = useForm()
+  const navigate = useNavigate()
   const [showPassword, setShowPassword] = useState(false);
-  if(user?.emailVerified){
+  if (user?.emailVerified) {
     navigate('/')
   }
   const handleRegistration = (data) => {
-     console.log(data,'registration data now ')
+    console.log(data, 'registration data now ')
     createUser(data.email, data.password)
       .then((userCredential) => {
         const user = userCredential.user;
@@ -21,7 +21,7 @@ const Registration = () => {
         toast.success("Registration successful")
         reset()
         handleEmailVerify()
-        
+
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -31,7 +31,7 @@ const Registration = () => {
 
   }
 
-  const handleEmailVerify=()=>{
+  const handleEmailVerify = () => {
     emailVerify()
     toast.error("Check your email and verify your Email")
   }
@@ -39,8 +39,8 @@ const Registration = () => {
     <div className=" h-[700px] flex items-center justify-center">
       <div className="w-96 p-7 border-2  shadow-lg rounded-md">
         <h1 className="text-xl text-center">SIGN UP</h1>
-        <form
-          onSubmit={handleSubmit(handleRegistration)}
+        <div
+
         >
           <div className="form-control w-full max-w-xs">
             <label className="label">
@@ -48,7 +48,7 @@ const Registration = () => {
             </label>
             <input
               {...register("name", {
-                required: "Name minimum 2 character", minLength: { value: 2 }
+                required: "Name minimum 2 character", minLength: 2
               })}
               type="text"
               placeholder="Enter your name"
@@ -62,7 +62,7 @@ const Registration = () => {
               <span className="label-text">Email</span>
             </label>
             <input
-              {...register("email", { required: "Email is Required", minLength: 2 })}
+              {...register("email", { required: "Email is Required" })}
               type="text"
               placeholder="Enter your E-mail"
               className={`input input-bordered w-full max-w-xs`} />
@@ -89,7 +89,7 @@ const Registration = () => {
               {/* show hide button for password  */}
 
               <button
-                onClick={()=>setShowPassword(!showPassword)}
+                onClick={() => setShowPassword(res => !res)}
                 className="absolute top-1/2 right-3 transform -translate-y-1/2 text-gray-500 focus:outline-none"
               >
                 {showPassword ? (
@@ -107,8 +107,8 @@ const Registration = () => {
                 lowercase, 1 number and 1 special character <span className="text-purple-500">!#$%&?@</span> </span>
             </label>}
           </div>
-          <input className="bg__bg font-bold cursor-pointer hover:bg-[#96c2a4] w-full mt-5 px-1 py-2 rounded-lg" type="submit"  value='SIGN UP'/>
-        </form>
+          <input className="bg__bg font-bold cursor-pointer hover:bg-[#96c2a4] w-full mt-5 px-1 py-2 rounded-lg" type="submit" value='SIGN UP' onClick={handleSubmit(handleRegistration)} />
+        </div>
         <div className="divider">OR</div>
         <Link to='/login' className="block text-black-500 font-normal text-center">ALREADY HAVE AN ACCOUNT?</Link>
       </div>

@@ -7,7 +7,8 @@ import HomeLoading from "../components/Loading/HomeLoading";
 import CategoryAllProduct from "../components/CategoryAllProduct/CategoryAllProduct";
 import AllSubCategory from "../components/AllSubCategory/AllSubCategory";
 import ProductDetail from "../components/productDetails/ProductDetail";
-const Home = lazy(() => import("../components/Home"));
+import Reset from "../pages/Reset";
+const Home = lazy(() => import("../pages/Home"));
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "login",
         element: <SignIn />,
+      },
+      {
+        path: "/reset",
+        element: <Reset/>,
       },
       {
         path: "/registration",

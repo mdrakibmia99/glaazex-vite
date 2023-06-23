@@ -1,8 +1,9 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
-import Category from './category/Category';
-import Products from './products/Products';
-import Slider from './slider/Slider';
+import Slider from '../components/slider/Slider';
+import Category from '../components/category/Category';
+import Products from '../components/products/Products';
+
 
 function Home() {
   const decodedPath = decodeURIComponent("Baby%20Item")

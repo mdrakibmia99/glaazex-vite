@@ -89,7 +89,7 @@ const SignIn = () => {
                 
               </div>
             </div>
-            <Link to='/#' className="underline block text-right mt-2 max-w-xs">Forget Password</Link>
+            <Link to='/reset' className="underline block text-right mt-2 max-w-xs">Forget Password</Link>
             <input
               className="bg__bg font-bold cursor-pointer hover:bg-[#96c2a4] w-full mt-5 px-1 py-2 rounded-lg" type="submit" value='SIGN IN' />
           </form>

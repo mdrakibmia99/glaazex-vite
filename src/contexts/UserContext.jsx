@@ -1,5 +1,5 @@
 
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendEmailVerification, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { createContext, useEffect, useState } from 'react';
 import app from "../firebase/firebase.init";
 export const AuthContext = createContext();
@@ -22,6 +22,12 @@ const UserContext = ({ children }) => {
   const emailVerify = () => {
     return sendEmailVerification(auth.currentUser)
   }
+
+// reset password 
+const ResetPassword=(email)=>{
+  return sendPasswordResetEmail(auth, email);
+}
+
   const LogOut = () => {
     return signOut(auth)
   }
@@ -40,7 +46,7 @@ const UserContext = ({ children }) => {
     }
 
   }, [])
-  const AuthInfo = { user, LogOut, createUser, signIn, loading, emailVerify }
+  const AuthInfo = { user, LogOut, createUser, signIn, loading, emailVerify,ResetPassword }
 
 
 
