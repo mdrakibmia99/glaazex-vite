@@ -3,23 +3,28 @@ import { AuthContext } from "../../contexts/UserContext";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
-
+import { getAuth, updateProfile } from "firebase/auth";
+import app from "../../firebase/firebase.init";
+const auth=getAuth(app)
 const Registration = () => {
+  console.log(auth?.currentUser,'auth')
   const { user, createUser, emailVerify } = useContext(AuthContext)
   const { register, reset, handleSubmit, formState: { errors } } = useForm()
   const navigate = useNavigate()
   const [showPassword, setShowPassword] = useState(false);
+  const [name,setName]=useState('')
+
+  
+
   if (user?.emailVerified) {
     navigate('/')
   }
-  const handleRegistration = (data) => {
-    console.log(data, 'registration data now ')
-    createUser(data.email, data.password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        console.log(user, "after registration")
+  const handleRegistration = async (data) => {
+  
+ 
+   await createUser(data.email, data.password)
+      .then( () => {
         toast.success("Registration successful")
-        reset()
         handleEmailVerify()
 
       })
@@ -29,7 +34,19 @@ const Registration = () => {
         reset()
       });
 
+      await updateProfile(auth.currentUser, {
+        displayName: name,
+      }).then(() => {
+        // Profile updated!
+        // ...
+      }).catch((error) => {
+       console.log(error)
+      });
+
+
   }
+
+ 
 
   const handleEmailVerify = () => {
     emailVerify()
@@ -50,6 +67,7 @@ const Registration = () => {
               {...register("name", {
                 required: "Name minimum 2 character", minLength: 2
               })}
+              onChange={(e)=>setName(e.target.value)}
               type="text"
               placeholder="Enter your name"
               className="input input-bordered w-full max-w-xs" />

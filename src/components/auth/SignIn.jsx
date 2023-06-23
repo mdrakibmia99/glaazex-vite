@@ -6,26 +6,27 @@ import { toast } from "react-hot-toast";
 
 
 const SignIn = () => {
-  const {user, signIn } = useContext(AuthContext)
+  const { user, signIn } = useContext(AuthContext)
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  if(user?.emailVerified){
+  if (user?.emailVerified) {
     navigate('/')
   }
-  const handleLogin = (e) => {
+  const handleLogin = async(e) => {
     e.preventDefault()
-    signIn(email, password)
+   await signIn(email, password)
       .then((userCredential) => {
         // Signed in 
         const user = userCredential.user;
-        console.log(user, "logged user")
-        if(user.emailVerified){
-       navigate('/')
-        }else{
+        console.log(userCredential,'after login')
+        if (user.emailVerified) {
+          toast.success(user.displayName, 'Login successful')
+          navigate('/')
+        } else {
           toast.error("Please verify your email .Check your mail box or spam")
-    
+
         }
 
 
@@ -55,7 +56,7 @@ const SignIn = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
                 type="text"
-                
+
                 placeholder="Enter your E-mail"
                 className={`input input-bordered w-full max-w-xs`} />
             </div>
@@ -65,7 +66,7 @@ const SignIn = () => {
               </label>
               <div className="relative">
                 <input
-                  
+
                   onChange={(e) => setPassword(e.target.value)}
                   value={password}
                   type={showPassword ? 'text' : 'password'}
@@ -73,9 +74,9 @@ const SignIn = () => {
                   className=" input input-bordered w-full max-w-xs"
                 />
                 {/* show hide button for password  */}
-                  
+
                 <div
-                 onClick={()=>setShowPassword(!showPassword)}
+                  onClick={() => setShowPassword(!showPassword)}
                   className="absolute top-1/2 right-3 transform -translate-y-1/2 text-gray-500 focus:outline-none"
                 >
                   {showPassword ? (
@@ -86,14 +87,14 @@ const SignIn = () => {
 
                   )}
                 </div>
-                
+
               </div>
             </div>
             <Link to='/reset' className="underline block text-right mt-2 max-w-xs">Forget Password</Link>
             <input
               className="bg__bg font-bold cursor-pointer hover:bg-[#96c2a4] w-full mt-5 px-1 py-2 rounded-lg" type="submit" value='SIGN IN' />
           </form>
-             
+
           <div className="divider">OR</div>
           <Link to='/registration' className="block text-black-500 font-normal text-center"> CREATE NEW ACCOUNT?</Link>
         </div>

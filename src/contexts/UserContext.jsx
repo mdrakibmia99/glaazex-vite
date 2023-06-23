@@ -10,6 +10,7 @@ const UserContext = ({ children }) => {
   const [user, setUser] = useState({})
   const [loading, setLoading] = useState(true)
 
+
   // // for create a new user 
   const createUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password)
