@@ -1,8 +1,10 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
-import { cartItems } from "../../database/productsData";
 
 
-const SelectImage = () => {
+
+const SelectImage = ({detailImage}) => {
+    console.log(detailImage,'detail img')
     const [selectedImage, setSelectedImage] = useState('')
     const showPreview = (imageUrl) => {
         setSelectedImage(imageUrl);
@@ -11,12 +13,12 @@ const SelectImage = () => {
         <div className='sm:w-full ld:m-5/12 md:w-5/12 mr-3 md' >
             <div className='w-full '>
                 <div className=" mt-4  border-black flex items-center justify-center rounded ">
-                    <img src={selectedImage || cartItems[0].imageUrl} alt="Preview Image"
+                    <img src={selectedImage || detailImage[0].imageUrl} alt="Preview Image"
                         className="object-contain w-full md:w-10/12 lg:w-10/12 h-[300px] shadow-md" />
                 </div>
                 <div className="flex item-center">
                     <div className="w-full h-full overflow-x-scroll scroll whitespace-nowrap">
-                        {cartItems.map((item, index) => (
+                        {detailImage.map((item, index) => (
                             <img
                                 key={index}
                                 src={item.imageUrl}

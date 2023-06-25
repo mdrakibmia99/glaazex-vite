@@ -1,6 +1,12 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const CheckoutInformation = () => {
+    const initValue='80'
+    const [selectedValue, setSelectedValue] = useState(initValue);
+  const handleSelectChange = (event) => {
+    setSelectedValue(event.target.value);
+  };
     return (
         <div className="container mx-auto lg:px-0 px-5">
             <h1 className="text-2xl font-bold mb-3">Information Form</h1>
@@ -35,15 +41,15 @@ const CheckoutInformation = () => {
                 <div className="w-full lg:max-w-xs">
 
                     <div className="p-[5px] bg-base-200 rounded-lg">
-                    <select className="select select-bordered w-full lg:max-w-xs bg-base-200 text-base">
-                        <option className="text-base bg-base-200 hover:bg-slate-400">Inside Dhaka</option>
-                        <option className="text-base bg-base-200">Dhaka Subarea</option>
-                        <option className="text-base bg-base-200">Outside Dhaka</option>
+                    <select value={selectedValue} onChange={handleSelectChange} className="select select-bordered w-full lg:max-w-xs bg-base-200 text-base">
+                        <option value={initValue} className="text-base bg-base-200 hover:bg-slate-400">Inside Dhaka</option>
+                        <option value="100" className="text-base bg-base-200">Dhaka Subarea</option>
+                        <option value="120" className="text-base bg-base-200">Outside Dhaka</option>
                     </select>
                     </div>
                 </div>
                 <div className=" join lg:max-w-[150px] w-full  lg:ml-3 md:ml-3 ml-0">
-                    <input value={'150'} className="text-center join-item w-full bg-base-200" type="text"  disabled/>
+                    <input value={selectedValue} className="text-center join-item w-full bg-base-200" type="text"  readOnly/>
                     <span className="join-item bg-base-200 p-4 ">TK</span>
                 </div>
                 </div>

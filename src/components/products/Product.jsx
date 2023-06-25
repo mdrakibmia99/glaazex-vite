@@ -11,12 +11,13 @@ const isTrue=pro_cat.sub_category
 
     return (
         <>
-            <div className='flex my-3 gap-2 mb-5'>
+            <div className='flex flex-row flex-wrap my-3 gap-2 mb-5 '>
                 {isTrue &&
                     Object.values(isTrue).map((category,index)=>(
 
                         <Link to={`/sub_category/${category}`}
-                        className=' rounded-full bg-[#E0E0E0] hover:shadow ease-in px-4 py-2'>
+                        key={index}
+                        className='whitespace-nowrap text-xs lg:text-lg rounded-full mr-2 bg-[#E0E0E0] hover:shadow ease-in px-4 py-2'>
                          {category}
                     </Link>
                     ))

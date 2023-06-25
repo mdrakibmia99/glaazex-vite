@@ -1,9 +1,11 @@
+/* eslint-disable react/prop-types */
 import SelectQuantity from "./SelectQuantity"
 
 
-const QuantityTable = () => {
+const QuantityTable = ({qtyTableData}) => {
+    console.log(qtyTableData,"qtyTableData")
     return (
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto max-h-[300px]">
             <table className="min-w-full divide-y divide-gray-200">
                 <thead className="bg-gray-100">
                     <tr>
@@ -13,14 +15,22 @@ const QuantityTable = () => {
                     </tr>
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
-                    <tr>
-                        <td className="px-1 lg:px-6 text-center py-4 whitespace-nowrap">Red</td>
-                        <td className="px-1 lg:px-6 text-center py-4 whitespace-nowrap">10</td>
+
+                    {qtyTableData &&
+                    qtyTableData.map((data,index)=>(
+                      <>
+                      <tr key={index}>
+                        <td className="px-1 lg:px-6 text-center py-4 whitespace-nowrap">{data.color}</td>
+                        <td className="px-1 lg:px-6 text-center py-4 whitespace-nowrap">{data.qty}</td>
                         <td className="px-1 lg:px-6 text-center py-4 whitespace-nowrap flex justify-center">
-                            <SelectQuantity />
+                            <SelectQuantity qty={data.qty}/>
                         </td>
                     </tr>
-                    {/* ... Add more table rows as needed */}
+                      </>  
+                    ))
+
+                    }
+                   
                 </tbody>
             </table>
         </div>
@@ -28,113 +38,6 @@ const QuantityTable = () => {
 
 
 
-        // <div>
-        //     <div className="overflow-x-auto h-96">
-        //         <table className="table table-pin-rows">
-        //             {/* head */}
-        //             <thead>
-        //                 <tr>
-        //                     <th>Color</th>
-        //                     <th>Quantity</th>
-        //                     <th>Select Quantity</th>
-        //                 </tr>
-        //             </thead>
-        //             <tbody>
-        //                 {/* row  */}
-        //                 <tr>
-        //                     <th>Red</th>
-        //                     <td>125</td>
-        //                     <td>
-        //                         <SelectQuantity />
-        //                     </td>
-
-        //                 </tr>
-        //                 {/* row  */}
-        //                 <tr>
-        //                     <th>Red</th>
-        //                     <td>125</td>
-        //                     <td>
-        //                         <SelectQuantity />
-        //                     </td>
-
-        //                 </tr>
-        //                 {/* row  */}
-        //                 <tr>
-        //                     <th>Red</th>
-        //                     <td>125</td>
-        //                     <td>
-        //                         <SelectQuantity />
-        //                     </td>
-
-        //                 </tr>
-        //                 {/* row  */}
-        //                 <tr>
-        //                     <th>Red</th>
-        //                     <td>125</td>
-        //                     <td>
-        //                         <SelectQuantity />
-        //                     </td>
-
-        //                 </tr>
-        //                 {/* row  */}
-        //                 <tr>
-        //                     <th>Red</th>
-        //                     <td>125</td>
-        //                     <td>
-        //                         <SelectQuantity />
-        //                     </td>
-
-        //                 </tr>
-        //                 {/* row  */}
-        //                 <tr>
-        //                     <th>Red</th>
-        //                     <td>125</td>
-        //                     <td>
-        //                         <SelectQuantity />
-        //                     </td>
-
-        //                 </tr>
-        //                 {/* row  */}
-        //                 <tr>
-        //                     <th>Red</th>
-        //                     <td>125</td>
-        //                     <td>
-        //                         <SelectQuantity />
-        //                     </td>
-
-        //                 </tr>
-        //                 {/* row  */}
-        //                 <tr>
-        //                     <th>Red</th>
-        //                     <td>125</td>
-        //                     <td>
-        //                         <SelectQuantity />
-        //                     </td>
-
-        //                 </tr>
-        //                 {/* row  */}
-        //                 <tr>
-        //                     <th>Red</th>
-        //                     <td>125</td>
-        //                     <td>
-        //                         <SelectQuantity />
-        //                     </td>
-
-        //                 </tr>
-        //                 {/* row  */}
-        //                 <tr>
-        //                     <th>Red</th>
-        //                     <td>125</td>
-        //                     <td>
-        //                         <SelectQuantity />
-        //                     </td>
-
-        //                 </tr>
-
-        //             </tbody>
-        //         </table>
-        //     </div>
-        // </div>
     )
 }
 
