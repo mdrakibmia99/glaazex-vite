@@ -8,6 +8,8 @@ import CategoryAllProduct from "../components/CategoryAllProduct/CategoryAllProd
 import AllSubCategory from "../components/AllSubCategory/AllSubCategory";
 import ProductDetail from "../components/productDetails/ProductDetail";
 import Reset from "../pages/Reset";
+import ProductCheckOut from "../pages/ProductCheckOut";
+import CheckoutInformation from "../pages/CheckoutInformation";
 const Home = lazy(() => import("../pages/Home"));
 
 const router = createBrowserRouter([
@@ -52,6 +54,14 @@ const router = createBrowserRouter([
       {
         path: "/product/:id",
         element: <ProductDetail />,
+      },
+      {
+        path: "/order/product",
+        element: <ProductCheckOut/>,
+      },
+      {
+        path: "/order/product/Information",
+        element: <CheckoutInformation/>,
       },
     ],
   },
