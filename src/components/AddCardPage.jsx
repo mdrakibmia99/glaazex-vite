@@ -6,7 +6,7 @@ import { CartContext } from "../contexts/CartItemsLocalStore"
 
 
 const AddCardPage = ({ cartChecked, setCardChecked }) => {
-  const { addItems,setAddItems, countItem, setCountItem } = useContext(CartContext)
+  const { addItems,setAddItems } = useContext(CartContext)
   let total = 0
   const handleDelete = (selectIndex) => {
     const deleteItem = addItems.filter((item, index) => {
