@@ -7,16 +7,16 @@ import { CartContext } from '../../contexts/CartItemsLocalStore'
 
 const ProductDetail = () => {
   const { id } = useParams()
-  const navigate=useNavigate()
-  const {addItems,countItem } = useContext(CartContext)
- 
+  const navigate = useNavigate()
+  const { addItems, countItem } = useContext(CartContext)
+
   allProductData
   const productData = allProductData.find(product => product.id == id)
   const detailImage = productData.product_details.product_images;
 
 
-  const handleAddCart=()=>{
-    console.log(addItems,'show add item')
+  const handleAddCart = () => {
+    console.log(addItems, 'show add item')
     navigate('/')
   }
 
@@ -27,20 +27,22 @@ const ProductDetail = () => {
 
         <div className='w-full grid md:flex lg:flex sm:w-full '>
           <SelectImage detailImage={detailImage} />
-          <SelectDetails productData={productData}  />
+          <SelectDetails productData={productData} />
         </div>
         <div className="alert bg-[#fdf2f2] mt-5 flex justify-center">
           <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
           <div className='flex justify-between w-full items-center'>
-            <span>Sign in to See Price & Order!</span> 
+            <span>Sign in to See Price & Order!</span>
 
-            <Link className='btn' to='/'>New shop</Link>
-            <div 
-            className="indicator mr-5">
-              <span
-               onClick={handleAddCart}
-              className='bg-[#ffc300] hover:bg-[#a7924c] hover:cursor-pointer ease-in-out duration-200 rounded-sm text-black px-5 font-medium py-2'> ADD TO CART</span>
-              <span className="badge rounded-full badge-md bg-black text-white indicator-item">{countItem}</span>
+            <div>
+              <Link className='mr-5 border-2 px-3 py-2 hover:shadow-lg text-[#ffc300] bg-black font-bold rounded-md ' to='/'>CONTINUE SHOP</Link>
+              <div
+                className="indicator mr-5">
+                <span
+                  onClick={handleAddCart}
+                  className='bg-[#ffc300] hover:bg-[#a7924c] hover:cursor-pointer ease-in-out duration-200 rounded-sm text-black px-5 font-medium py-2'> ADD TO CART</span>
+                <span className="badge rounded-full badge-md bg-black text-white indicator-item">{countItem}</span>
+              </div>
             </div>
           </div>
 

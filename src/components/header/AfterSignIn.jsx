@@ -3,8 +3,10 @@ import { AuthContext } from "../../contexts/UserContext"
 import { Navigate } from "react-router-dom";
 
 
+
 function AfterSignIn() {
     const {LogOut} = useContext(AuthContext)
+
     const handleLogOut=()=>{
         LogOut().then(() => {
             // Sign-out successful.

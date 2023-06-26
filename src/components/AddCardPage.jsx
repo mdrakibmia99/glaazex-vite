@@ -6,8 +6,8 @@ import { CartContext } from "../contexts/CartItemsLocalStore"
 
 
 const AddCardPage = ({ cartChecked, setCardChecked }) => {
-  const { addItems, setAddItems, countItem, setCountItem } = useContext(CartContext)
-
+  const { addItems,setAddItems, countItem, setCountItem } = useContext(CartContext)
+  let total = 0
   const handleDelete = (selectIndex) => {
     const deleteItem = addItems.filter((item, index) => {
       if (index !== selectIndex) {
@@ -16,6 +16,11 @@ const AddCardPage = ({ cartChecked, setCardChecked }) => {
     })
     setAddItems([...deleteItem])
   }
+
+  for (let item of addItems) {
+    total = total + parseFloat(item.price) * parseFloat(item.qty)
+  }
+
 
   return (
     <>
@@ -70,8 +75,8 @@ const AddCardPage = ({ cartChecked, setCardChecked }) => {
 
                               <div
                                 onClick={() => handleDelete(index)}
-                                className="w-[25px] ml-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" id="delete" x="0" y="0" version="1.1" viewBox="0 0 29 29" ><path d="M19.795 27H9.205a2.99 2.99 0 0 1-2.985-2.702L4.505 7.099A.998.998 0 0 1 5.5 6h18a1 1 0 0 1 .995 1.099L22.78 24.297A2.991 2.991 0 0 1 19.795 27zM6.604 8 8.21 24.099a.998.998 0 0 0 .995.901h10.59a.998.998 0 0 0 .995-.901L22.396 8H6.604z"></path><path d="M26 8H3a1 1 0 1 1 0-2h23a1 1 0 1 1 0 2zM14.5 23a1 1 0 0 1-1-1V11a1 1 0 1 1 2 0v11a1 1 0 0 1-1 1zM10.999 23a1 1 0 0 1-.995-.91l-1-11a1 1 0 0 1 .905-1.086 1.003 1.003 0 0 1 1.087.906l1 11a1 1 0 0 1-.997 1.09zM18.001 23a1 1 0 0 1-.997-1.09l1-11c.051-.55.531-.946 1.087-.906a1 1 0 0 1 .905 1.086l-1 11a1 1 0 0 1-.995.91z"></path><path d="M19 8h-9a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1zm-8-2h7V4h-7v2z"></path></svg>
+                                className="ml-2 hover:cursor-pointer  hover:bg-slate-400 p-2 rounded-full ease-in duration-500">
+                                <svg className="w-[25px] " xmlns="http://www.w3.org/2000/svg" id="delete" x="0" y="0" version="1.1" viewBox="0 0 29 29" ><path d="M19.795 27H9.205a2.99 2.99 0 0 1-2.985-2.702L4.505 7.099A.998.998 0 0 1 5.5 6h18a1 1 0 0 1 .995 1.099L22.78 24.297A2.991 2.991 0 0 1 19.795 27zM6.604 8 8.21 24.099a.998.998 0 0 0 .995.901h10.59a.998.998 0 0 0 .995-.901L22.396 8H6.604z"></path><path d="M26 8H3a1 1 0 1 1 0-2h23a1 1 0 1 1 0 2zM14.5 23a1 1 0 0 1-1-1V11a1 1 0 1 1 2 0v11a1 1 0 0 1-1 1zM10.999 23a1 1 0 0 1-.995-.91l-1-11a1 1 0 0 1 .905-1.086 1.003 1.003 0 0 1 1.087.906l1 11a1 1 0 0 1-.997 1.09zM18.001 23a1 1 0 0 1-.997-1.09l1-11c.051-.55.531-.946 1.087-.906a1 1 0 0 1 .905 1.086l-1 11a1 1 0 0 1-.995.91z"></path><path d="M19 8h-9a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1zm-8-2h7V4h-7v2z"></path></svg>
                               </div>
                             </div>
                           </li>
@@ -89,7 +94,7 @@ const AddCardPage = ({ cartChecked, setCardChecked }) => {
             <div className="fixed bottom-0 w-full px-5">
               <div className="flex justify-between my-3">
                 <p className="font-bold">SUB TOTAL</p>
-                <p className="font-bold">120 <span>TK</span> </p>
+                <p className="font-bold">{total} <span>TK</span> </p>
               </div>
               <Link
                 onClick={() => setCardChecked(!cartChecked)}

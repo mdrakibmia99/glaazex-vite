@@ -19,7 +19,7 @@ const SelectDetails = ({productData}) => {
 
   return (
     <div className='w-full md:w-7/12 lg:w-7/12'>
-      <h2 className="font-bold text-2xl">{productData?.product_title}</h2>
+      <h2 className="font-bold text-2xl z-0">{productData?.product_title}</h2>
        <p className="text-5xl font-bold text-[#314C3D] mt-3 relative">{productData.price} <span className="text-sm absolute">TK</span></p>
       <div className="flex items-center my-5">
         <button

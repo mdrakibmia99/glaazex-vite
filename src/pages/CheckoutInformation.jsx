@@ -7,6 +7,7 @@ const CheckoutInformation = () => {
   const handleSelectChange = (event) => {
     setSelectedValue(event.target.value);
   };
+  
     return (
         <div className="container mx-auto lg:px-0 px-5">
             <h1 className="text-2xl font-bold mb-3">Information Form</h1>

@@ -238,11 +238,11 @@ export const allProductData = [
     },
     {
         id: 10,
-        product_name: "New beauty lipstick",
+        product_name: "Undergarments",
         stock: true,
         price: 150,
-        product_title: "Lipstick",
-        product_category: "women bag",
+        product_title: "This product for asdf  af  all person",
+        product_category: "Men Undergarments",
         product_image: "https://backend.pndservicebd.com//storage/upload/products/thumbnail/1768153516227703.jpeg",
         product_details: {
             overview: "This product from Bd.",
@@ -293,8 +293,8 @@ export const allProductData = [
         product_name: "Baby Item",
         stock: true,
         price: 50,
-        product_category: "category bag",
-        product_title: "Lipstick",
+        product_category: "",
+        product_title: "This product for all baby",
 
         product_image: "https://backend.pndservicebd.com//storage/upload/products/thumbnail/1768153516227703.jpeg",
         product_details: {
