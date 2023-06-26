@@ -6,8 +6,6 @@ import Products from '../components/products/Products';
 
 
 function Home() {
-  const decodedPath = decodeURIComponent("Baby%20Item")
-  console.log(decodedPath,"decodedPath")
   return (
     <div>
       <Slider/>

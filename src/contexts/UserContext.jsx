@@ -36,7 +36,7 @@ const ResetPassword=(email)=>{
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       if (currentUser === null || currentUser.emailVerified) {
         setUser(currentUser)
-        console.log(currentUser, 'after auth change')
+       
       }
       setLoading(false)
 

@@ -1,12 +1,20 @@
 /* eslint-disable react/prop-types */
+
 import QuantityTable from "./QuantityTable"
+
 
 
 const SelectDetails = ({productData}) => {
   // const total_qty=productData.color_qty.map(items=> )
+
   const quantities = productData.color_qty.map(item => item.qty);
   const total = quantities.reduce((acc, curr) => acc + curr, 0);
   const qtyTableData=productData.color_qty;
+  const id=productData.id;
+  const product_image=productData.product_image
+  const price=productData.price
+  const product_title=productData.product_title
+  const CartData={id,product_image,price,product_title}
   
 
   return (
@@ -24,8 +32,9 @@ const SelectDetails = ({productData}) => {
         <p className="text-md mt-2 mb-5">{productData.product_details.overview}</p>
       </div>
 
-      <QuantityTable  qtyTableData={qtyTableData}/>
-     
+      <QuantityTable CartData={CartData}   qtyTableData={qtyTableData} />
+       
+        
 
     </div>
   )

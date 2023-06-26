@@ -2,8 +2,8 @@
 import SelectQuantity from "./SelectQuantity"
 
 
-const QuantityTable = ({qtyTableData}) => {
-    console.log(qtyTableData,"qtyTableData")
+const QuantityTable = ({qtyTableData,CartData}) => {
+    
     return (
         <div className="overflow-x-auto max-h-[300px]">
             <table className="min-w-full divide-y divide-gray-200">
@@ -23,7 +23,7 @@ const QuantityTable = ({qtyTableData}) => {
                         <td className="px-1 lg:px-6 text-center py-4 whitespace-nowrap">{data.color}</td>
                         <td className="px-1 lg:px-6 text-center py-4 whitespace-nowrap">{data.qty}</td>
                         <td className="px-1 lg:px-6 text-center py-4 whitespace-nowrap flex justify-center">
-                            <SelectQuantity qty={data.qty}/>
+                            <SelectQuantity data={data} CartData={CartData}  />
                         </td>
                     </tr>
                       </>  

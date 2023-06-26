@@ -268,7 +268,7 @@ export const allProductData = [
         stock: true,
         price: 100,
         product_category: "category bag",
-        product_title: "Lipstick",
+        product_title: "Baby fitter",
         product_image: "https://backend.pndservicebd.com//storage/upload/products/thumbnail/1768153516227703.jpeg",
         product_details: {
             overview: "This product from Bd.",
@@ -321,7 +321,7 @@ export const allProductData = [
         stock: true,
         price: 10,
         product_category: "category bag",
-        product_title: "Lipstick",
+        product_title: "This is best product",
         product_image: "https://backend.pndservicebd.com//storage/upload/products/thumbnail/1768153516227703.jpeg",
         product_details: {
             overview: "This product from Bd.",
@@ -335,23 +335,23 @@ export const allProductData = [
         color_qty: [
             {
                 color: "red",
-                qty: 10,
-            },
-            {
-                color: "red",
-                qty: 10,
-            },
-            {
-                color: "red",
                 qty: 11,
             },
             {
-                color: "red",
-                qty: 11,
+                color: "blue",
+                qty: 12,
             },
             {
-                color: "red",
-                qty: 11,
+                color: "orange",
+                qty: 13,
+            },
+            {
+                color: "green",
+                qty: 114,
+            },
+            {
+                color: "tomato",
+                qty: 115,
             },
             
         ]

@@ -4,7 +4,7 @@ import { useState } from "react";
 
 
 const SelectImage = ({detailImage}) => {
-    console.log(detailImage,'detail img')
+
     const [selectedImage, setSelectedImage] = useState('')
     const showPreview = (imageUrl) => {
         setSelectedImage(imageUrl);
