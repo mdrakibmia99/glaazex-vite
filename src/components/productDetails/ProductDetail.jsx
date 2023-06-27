@@ -29,12 +29,14 @@ const ProductDetail = () => {
           <SelectImage detailImage={detailImage} />
           <SelectDetails productData={productData} />
         </div>
-        <div className="alert bg-[#fdf2f2] mt-5 flex justify-center">
+        <div className="alert bg-[#fdf2f2] mt-5 flex lg:flex-row md:flex-row flex-col lg:justify-between md:justify-between justify-center ">
+          <div className='flex lg:justify-start justify-center w-full'>
           <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-          <div className='flex justify-between w-full items-center'>
             <span>Sign in to See Price & Order!</span>
+          </div>
+          <div className='w-full'>
 
-            <div>
+            <div className='flex justify-center lg:text-base md:text-base text-xs items-center lg:justify-end  w-full'>
               <Link className='mr-5 border-2 px-3 py-2 hover:shadow-lg text-[#ffc300] bg-black font-bold rounded-md ' to='/'>CONTINUE SHOP</Link>
               <div
                 className="indicator mr-5">
