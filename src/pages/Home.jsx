@@ -8,9 +8,12 @@ import Products from '../components/products/Products';
 function Home() {
   return (
     <div>
-      <Slider/>
-      <Category/>
-      <Products/>
+      <Slider />
+      <Category />
+      <Products />
+
+     
+    
     </div>
   )
 

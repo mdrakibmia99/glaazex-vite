@@ -7,7 +7,7 @@ import { getAuth, updateProfile } from "firebase/auth";
 import app from "../../firebase/firebase.init";
 const auth=getAuth(app)
 const Registration = () => {
-  console.log(auth?.currentUser,'auth')
+ 
   const { user, createUser, emailVerify } = useContext(AuthContext)
   const { register, reset, handleSubmit, formState: { errors } } = useForm()
   const navigate = useNavigate()

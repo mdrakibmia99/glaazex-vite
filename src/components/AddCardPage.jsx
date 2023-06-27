@@ -6,7 +6,9 @@ import { CartContext } from "../contexts/CartItemsLocalStore"
 
 
 const AddCardPage = ({ cartChecked, setCardChecked }) => {
-  const { addItems,setAddItems } = useContext(CartContext)
+  const { addItems, setAddItems } = useContext(CartContext)
+
+  console.log(addItems, 'what is add items')
   let total = 0
   const handleDelete = (selectIndex) => {
     const deleteItem = addItems.filter((item, index) => {
@@ -54,7 +56,10 @@ const AddCardPage = ({ cartChecked, setCardChecked }) => {
               <div className="h-[70vh] w-full overflow-x-hidden ">
                 {
                   addItems.length === 0 ?
-                    <span>No Card Item</span> :
+                    <div className="w-ful flex justify-center items-center">
+                      <span className="text-xl font-bold">No Card Item</span>
+                    </div>
+                    :
 
                     <ul className="w-full">
                       {
@@ -86,12 +91,14 @@ const AddCardPage = ({ cartChecked, setCardChecked }) => {
               </div>
 
 
-              <div className="divider mt-0"></div>
+             
             </div>
 
 
-
+          {
+            addItems.length !== 0 &&
             <div className="fixed bottom-0 w-full px-5">
+               <div className="divider mt-0"></div>
               <div className="flex justify-between my-3">
                 <p className="font-bold">SUB TOTAL</p>
                 <p className="font-bold">{total} <span>TK</span> </p>
@@ -100,6 +107,7 @@ const AddCardPage = ({ cartChecked, setCardChecked }) => {
                 onClick={() => setCardChecked(!cartChecked)}
                 to={'/order/product'} className="block text-center w-full mb-5 bg__bg rounded-md py-2 text-black font-bold hover:cursor-pointer hover:bg-[#939f90] ease-in-out duration-200">ORDER NOW</Link>
             </div>
+          }
           </div>
         </div>
       </div>

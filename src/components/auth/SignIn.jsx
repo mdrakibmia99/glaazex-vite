@@ -20,7 +20,6 @@ const SignIn = () => {
       .then((userCredential) => {
         // Signed in 
         const user = userCredential.user;
-        console.log(userCredential,'after login')
         if (user.emailVerified) {
           toast.success(user.displayName, 'Login successful')
           navigate('/')

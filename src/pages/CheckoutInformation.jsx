@@ -24,7 +24,7 @@ const CheckoutInformation = () => {
                 <p className="text-base font-light">RECIPIENT NUMBER *</p>
                 <div className="join w-full">
                     <span className="join-item bg-base-200 p-4">+88</span>
-                    <input placeholder="01***" className="join-item bg-base-200 w-full" type="tel" />
+                    <input placeholder="01***" className="join-item bg-base-200 outline-0 w-full" type="tel" />
                 </div>
             </div>
 

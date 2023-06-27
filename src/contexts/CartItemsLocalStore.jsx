@@ -8,13 +8,14 @@ const AddCartContext = ({ children }) => {
     const [addItems, setAddItems] = useState([])
     const [countItem, setCountItem] = useState(0)
     
-   
+    const [productDetail, setProductDetail] = useState([])
 
 
 
     const CartInfo = {
         addItems, setAddItems,
-        countItem, setCountItem
+        countItem, setCountItem,
+        productDetail, setProductDetail
    
 
     }
