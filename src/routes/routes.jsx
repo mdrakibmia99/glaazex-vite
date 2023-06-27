@@ -10,6 +10,8 @@ import ProductDetail from "../components/productDetails/ProductDetail";
 import Reset from "../pages/Reset";
 import ProductCheckOut from "../pages/ProductCheckOut";
 import CheckoutInformation from "../pages/CheckoutInformation";
+import About from "../pages/FooterInfo/About";
+import PrivacyPolicy from "../pages/FooterInfo/PrivacyPolicy";
 const Home = lazy(() => import("../pages/Home"));
 
 const router = createBrowserRouter([
@@ -62,6 +64,16 @@ const router = createBrowserRouter([
       {
         path: "/order/product/Information",
         element: <CheckoutInformation/>,
+      },
+      {
+        // for footer 
+        path: "/About",
+        element: <About/>,
+      },
+      {
+        // for footer 
+        path: "/PrivacyPolicy",
+        element: <PrivacyPolicy/>,
       },
     ],
   },

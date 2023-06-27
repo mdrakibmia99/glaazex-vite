@@ -19,7 +19,10 @@ const CategoryAllProduct = () => {
                   {filterSubCat &&
                       Object.values(filterSubCat[0].sub_category).map((category,index)=>(
   
-                          <Link to='#' className='rounded-full bg-[#ffffff] px-4 py-2'>
+                          <Link 
+                           key={index}
+                          to={`/sub_category/${category}`}
+                           className='whitespace-nowrap text-xs lg:text-lg rounded-full mr-2 bg-[#E0E0E0] hover:shadow ease-in px-4 py-2'>
                            {category}
                       </Link>
                       ))
@@ -28,7 +31,10 @@ const CategoryAllProduct = () => {
               </div>
         <div className='grid gap-2 grid-cols-2 place-content-around md:grid-cols-3 lg:grid-cols-5'>
           {
-            filterArray &&
+            filterArray? 
+            <div className="mt-5 flex justify-center items-center"> 
+              <p className=''>No Result fount</p>
+            </div>:
   
   
             filterArray?.map((product) => (

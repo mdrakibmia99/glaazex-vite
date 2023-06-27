@@ -13,7 +13,7 @@ const Product = ({ pro_cat }) => {
 
     return (
         <>
-            <div className='flex flex-row flex-wrap my-3 gap-2 mb-5 '>
+            <div className='flex flex-row flex-wrap my-3 lg:px-0 md:px-0 px-3 gap-2 mb-5 '>
                 {isTrue &&
                     Object.values(isTrue).map((category, index) => (
 
@@ -30,7 +30,7 @@ const Product = ({ pro_cat }) => {
 
             </div>
             {/* <div className='grid gap-2 grid-cols-2 md:grid-cols-3 lg:grid-cols-5 mb-5 place-content-around '> */}
-            <div className='grid gap-2 grid-cols-2 md:grid-cols-3 lg:grid-cols-5 mb-5 place-content-around '>
+            <div className='grid gap-2 grid-cols-2 md:grid-cols-3 lg:grid-cols-5 mb-5 lg:px-0 md:px-0 px-3 place-content-around '>
                 {/* product card use for product img and name show */}
                 {
                     allProductData.map((product) => (

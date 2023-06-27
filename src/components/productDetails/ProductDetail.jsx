@@ -39,7 +39,7 @@ const ProductDetail = ({ productDetail }) => {
           <div className='w-full'>
 
             <div className='flex justify-center lg:text-base md:text-base text-xs items-center lg:justify-end  w-full'>
-              <Link className='mr-5 border-2 px-3 py-2 hover:shadow-lg text-[#ffc300] bg-black font-bold rounded-md ' to='/'>CONTINUE SHOP</Link>
+        
               <div
                 className="indicator mr-5">
                 <span

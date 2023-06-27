@@ -32,7 +32,7 @@ function Navbar() {
           </label>
         </div>
         {
-          (user && user?.uid)? <AfterSignIn/>: <BeforeSignIn/>
+          (!user && !user?.uid)? <AfterSignIn/>: <BeforeSignIn/>
         }
       </div>
     </div>
