@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 const CheckoutInformation = () => {
     const initValue='80'
     const [selectedValue, setSelectedValue] = useState(initValue);
+    const [promotionalCode, setPromotionalCode] = useState(false);
   const handleSelectChange = (event) => {
     setSelectedValue(event.target.value);
   };
@@ -22,9 +23,9 @@ const CheckoutInformation = () => {
 
             <div className="mb-3">
                 <p className="text-base font-light">RECIPIENT NUMBER *</p>
-                <div className="join w-full">
+                <div className="join w-full ">
                     <span className="join-item bg-base-200 p-4">+88</span>
-                    <input placeholder="01***" className="join-item bg-base-200 outline-0 w-full" type="tel" />
+                    <input placeholder="01***" className="join-item bg-base-200 outline-1 outline-[#d0d1d4] w-full" type="tel" />
                 </div>
             </div>
 
@@ -56,16 +57,38 @@ const CheckoutInformation = () => {
                 </div>
                 <div className="mb-3">
                 <label className="label p-0 ">
-                    <span className="label-text text-base font-light">PAYMENT STATUS *</span>
-                </label>
-                <div className="p-[5px] bg-base-200 rounded-lg">
+                    <div>
 
-                    <select className="select select-bordered w-full bg-base-200">
-                        <option>Not Paid</option>
-                        <option>Partially Paid</option>
-                        <option>Paid</option>
-                    </select>
-                </div>
+                    <span className="label-text text-base font-light">Have you any Promotional Code? </span>
+                    <input
+                     type="checkbox" 
+                     onClick={()=>setPromotionalCode(!promotionalCode)}
+                     name="" id="" />
+                     </div>
+                </label>
+                {
+                    promotionalCode &&
+                    <div className="flex lg:flex-row flex-col gap-3 mb-3">
+                    <div className="w-full lg:max-w-xs">
+    
+                        <div className="p-[5px] bg-base-200 rounded-lg">
+                        <select className="select select-bordered w-full lg:max-w-xs bg-base-200 text-base">
+                            <option>Discount Code</option>
+                            <option>Membership Code</option>
+                            <option>Reseller Code</option>
+                            
+    
+                        </select>
+                        </div>
+                    </div>
+                    <div className="  w-full lg:max-w-xs    lg:ml-3 md:ml-3 ml-0">
+
+                        <input  className="input input-bordered h-[57px] w-full bg-base-200" type="text"  placeholder="Enter code"/>
+        
+                    </div>
+                    </div>
+                }
+                
                 </div>
                 <div className="">
                 <label className="label p-0">

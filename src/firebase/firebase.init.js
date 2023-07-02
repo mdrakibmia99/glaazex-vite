@@ -7,18 +7,18 @@ import { initializeApp } from "firebase/app";
 // Your web app's Firebase configuration
 const firebaseConfig = {
 
-  // apiKey: "AIzaSyDzmjp4fBVqmSut4AuPXf-twURmLaLgQWk",
-  // authDomain: "glaazex-vite.firebaseapp.com",
-  // projectId: "glaazex-vite",
-  // storageBucket: "glaazex-vite.appspot.com",
-  // messagingSenderId: "736567272365",
-  // appId: "1:736567272365:web:cf05bb14d4e8ca34827724"
-  apiKey: import.meta.env.VITE_REACT_APP_apiKey,
-  authDomain: import.meta.env.VITE_REACT_APP_authDomain,
-  projectId: import.meta.env.VITE_REACT_APP_projectId,
-  storageBucket: import.meta.env.VITE_REACT_APP_storageBucket,
-  messagingSenderId: import.meta.env.VITE_REACT_APP_messagingSenderId,
-  appId: import.meta.env.VITE_REACT_APP_appId,
+  apiKey: "AIzaSyDzmjp4fBVqmSut4AuPXf-twURmLaLgQWk",
+  authDomain: "glaazex-vite.firebaseapp.com",
+  projectId: "glaazex-vite",
+  storageBucket: "glaazex-vite.appspot.com",
+  messagingSenderId: "736567272365",
+  appId: "1:736567272365:web:cf05bb14d4e8ca34827724"
+  // apiKey: import.meta.env.VITE_REACT_APP_apiKey,
+  // authDomain: import.meta.env.VITE_REACT_APP_authDomain,
+  // projectId: import.meta.env.VITE_REACT_APP_projectId,
+  // storageBucket: import.meta.env.VITE_REACT_APP_storageBucket,
+  // messagingSenderId: import.meta.env.VITE_REACT_APP_messagingSenderId,
+  // appId: import.meta.env.VITE_REACT_APP_appId,
 };
 
 // Initialize Firebase

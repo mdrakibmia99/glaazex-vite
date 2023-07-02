@@ -12,6 +12,7 @@ import ProductCheckOut from "../pages/ProductCheckOut";
 import CheckoutInformation from "../pages/CheckoutInformation";
 import About from "../pages/FooterInfo/About";
 import PrivacyPolicy from "../pages/FooterInfo/PrivacyPolicy";
+import Selectpayment from "../pages/Payment/Selectpayment";
 const Home = lazy(() => import("../pages/Home"));
 
 const router = createBrowserRouter([
@@ -74,6 +75,11 @@ const router = createBrowserRouter([
         // for footer 
         path: "/PrivacyPolicy",
         element: <PrivacyPolicy/>,
+      },
+      {
+        // for payment method select 
+        path: "/payment",
+        element: <Selectpayment/>,
       },
     ],
   },
