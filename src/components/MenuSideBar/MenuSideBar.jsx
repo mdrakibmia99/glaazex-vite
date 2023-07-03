@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Link } from "react-router-dom"
 import { categories } from "../../database/productsData"
 
 function MenuSideBar() {
@@ -20,7 +21,7 @@ function MenuSideBar() {
 		</div> 
 		<div className="drawer-side">
 		  <label htmlFor="menu-side-bar" className="drawer-overlay"></label>
-		  <div className="bg-base-200 w-80  h-screen z-50  fixed">
+		  <div className="bg-base-200 w-80  h-screen z-50  overflow-y-auto fixed">
 
             <div className="py-5 bg__bg ">
 		  <div className="flex justify-between px-5 items-center">
@@ -36,23 +37,34 @@ function MenuSideBar() {
                 </div>
               </div>
 			  <nav className="">
-        <ul className="">
+        <ul className="w-full">
 			{
 				categories &&
 				categories.map(item=>(
-					<li className="m-4 group relative">
-					<div className="flex items-center">
+					<li className=" group ">
+						<div className="collapse collapse-arrow bg-base-200">
+      <input type="radio" name="my-accordion-2" />
+      <div className="collapse-title text-xl font-medium">
+	  <div className="flex items-center">
 					<img className="w-[30px]" src={item.img} alt="" />
-					<a className="text-gray-400  ml-3 hover:text-white" href="/about">{item.product_name}</a>
+					<p className="text-gray-400  ml-3 hover:text-white" >{item.product_name}</p>
 					</div>
-					<ul  className="hidden absolute w-48 rounded p-3 top-0 bg-base-200 left-80 group-hover:block">
-					  <li className="mb-3">
-						<a className="text-gray-400  hover:text-black" href="/about/history">History</a>
-					  </li>
-					  <li>
-						<a className="text-gray-400 hover:text-black" href="/about/team">Team</a>
-					  </li>
-					</ul>
+      </div>
+      <div className="collapse-content block">
+        <ul>
+			<li><Link to="#" > {item.product_name}</Link> </li>
+			{
+				
+				 Object.keys(item.sub_category)?.map(keyName=>(
+
+					 <li key={keyName}><Link to="#" > {item.sub_category[keyName]}</Link> </li>
+				 ))
+
+			}
+		</ul>
+      </div>
+    </div>
+					
 				  </li>
 				))
 			}

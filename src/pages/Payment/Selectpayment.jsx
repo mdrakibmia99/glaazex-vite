@@ -2,21 +2,23 @@
 
 function Selectpayment() {
   return (
-    <>
-     <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M19 12H5M12 5l7 7-7 7" />
-      </svg>
-    </>
+    <><div className="collapse collapse-arrow bg-base-200">
+        <input type="radio" name="my-accordion-2" />
+        <div className="collapse-title text-xl font-medium">
+          Click to open this one and close others
+        </div>
+        <div className="collapse-content">
+          <p>hello</p>
+        </div>
+      </div><div className="collapse collapse-arrow bg-base-200">
+        <input type="radio" name="my-accordion-2" />
+        <div className="collapse-title text-xl font-medium">
+          Click to open this one and close others
+        </div>
+        <div className="collapse-content">
+          <p>hello</p>
+        </div>
+      </div></>
   )
 }
 

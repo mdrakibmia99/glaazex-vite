@@ -11,7 +11,7 @@ const CategoryAllProduct = () => {
   
   
     return (
-      <div>
+      <section >
         <h1>
           Category : <span> {productType}</span>
         </h1>
@@ -47,7 +47,7 @@ const CategoryAllProduct = () => {
   
         </div>
   
-      </div>
+      </section>
     )
         }
 export default CategoryAllProduct
