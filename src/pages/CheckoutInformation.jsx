@@ -10,6 +10,7 @@ const CheckoutInformation = () => {
   };
   
     return (
+        <section className="bg__bg w-full">
         <div className="container mx-auto lg:px-0 px-5">
             <h1 className="text-2xl font-bold mb-3">Information Form</h1>
 
@@ -103,6 +104,7 @@ const CheckoutInformation = () => {
 
 
         </div>
+        </section>
     );
 };
 
