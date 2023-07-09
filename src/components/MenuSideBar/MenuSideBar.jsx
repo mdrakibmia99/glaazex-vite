@@ -5,7 +5,7 @@ import { categories } from "../../database/productsData"
 function MenuSideBar() {
 	const [sideNavBar, setSideNavBar] = useState(true)
 	return(
-			<div className="drawer">
+			<div className="drawer z-[999]">
 		<input id="menu-side-bar" type="checkbox" 
 		
 		checked={`${sideNavBar? '':'checked'}`}
@@ -37,27 +37,27 @@ function MenuSideBar() {
                 </div>
               </div>
 			  <nav className="">
-        <ul className="w-full">
+        <ul className="w-full bg-white">
 			{
 				categories &&
 				categories.map(item=>(
-					<li className=" group ">
-						<div className="collapse collapse-arrow bg-base-200">
-      <input type="radio" name="my-accordion-2" />
-      <div className="collapse-title text-xl font-medium">
-	  <div className="flex items-center">
+					<li className=" group">
+						<div className="collapse collapse-arrow bg-base-200 rounded-none">
+						<input type="radio" name="glaazex-accordion" checked='checked' /> 
+      <div className="collapse-title text-xl font-medium bg-white">
+	  <div className="flex items-center ">
 					<img className="w-[30px]" src={item.img} alt="" />
 					<p className="text-gray-400  ml-3 hover:text-white" >{item.product_name}</p>
 					</div>
       </div>
-      <div className="collapse-content block">
-        <ul>
-			<li><Link to="#" > {item.product_name}</Link> </li>
+      <div className="collapse-content block bg-white ">
+        <ul className='leading-10'>
+			<li ><Link to="#" > {item.product_name}</Link> </li>
 			{
 				
 				 Object.keys(item.sub_category)?.map(keyName=>(
 
-					 <li key={keyName}><Link to="#" > {item.sub_category[keyName]}</Link> </li>
+					 <li className="border-t-2" key={keyName}><Link to="#" > {item.sub_category[keyName]}</Link> </li>
 				 ))
 
 			}
