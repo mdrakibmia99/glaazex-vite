@@ -4,11 +4,11 @@ import style from './Payment.module.css'
 const PaymentOption = () => {
     const [select,setSelect]=useState(-1)
     const paymentOption=[ 
-        {img:'/public/images/Nagad-Vertical-Logo.wine.svg',
+        {img:'/images/Nagad-Vertical-Logo.wine.svg',
         name:"Nagad"
       },
       {
-        img:'/public/images/bkash.svg',name:'Bkash'
+        img:'/images/bkash.svg',name:'Bkash'
       }
       ]
   return (
