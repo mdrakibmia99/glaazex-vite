@@ -16,7 +16,7 @@ function Navbar() {
     return <HomeLoading></HomeLoading>
   }
   return (
-    <div className="w-full bg__bg shadow-lg z-10 ">
+    <div className="w-full bg__bg shadow-lg z-10 box-border">
       <div className="container mx-auto navbar ">
         <div className="flex flex-row  w-full justify-between">
           <div className="flex items-center">

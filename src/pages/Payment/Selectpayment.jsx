@@ -12,9 +12,9 @@ const paymentOption=[
 
 function SelectPayment() {
   const [select,setSelect]=useState(-1)
-  return (<section className="container rk mx-auto h-[450px]">
+  return (<section className="container  mx-auto h-[450px]">
     <h1 className="text-3xl text-center">SELECT PAYMENT METHOD</h1>
-     <div className="flex flex-row  gap-3 flex-initial justify-center">
+     <div className="flex flex-row  gap-3  justify-center px-2">
       {
           paymentOption.map((PayOpt,index)=>(
 
