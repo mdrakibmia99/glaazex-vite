@@ -24,7 +24,7 @@ function Navbar() {
           <div className="lg:mr-[30] md:mr-[30px] mr-0">
             <MenuSideBar/>
           </div>
-        <div className=" max-w-[300px] lg:w-full md:w-full basis-1/3">
+        <div className=" max-w-[180px] lg:w-full md:w-full basis-1/3">
           <div className="join w-full outline-none border-none ">
             <input className="input input-bordered bg-[#eeeeee] border-none   md:w-[180px] lg:w-[180px] join-item rounded-l-full focus:outline-0" placeholder="Search..." />
             <button className="btn join-item rounded-r-full bg-[#eeeeee] border-none">
