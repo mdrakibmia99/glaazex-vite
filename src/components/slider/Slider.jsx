@@ -27,12 +27,12 @@ const Slider = () => {
       {images.map((image, index) => (
         <img
           key={index}
-          className={`slider-image  transition-all h-[400px] lg:h-[500px] w-full ${currentSlide === index ? 'active' : ''}`}
+          className={`slider-image  transition-all h-auto w-full ${currentSlide === index ? 'active' : ''}`}
           src={image}
           alt={`Image ${index + 1}`}
         />
       ))}
-      <div className="slider-navigation flex justify-center mt-4">
+      {/* <div className="slider-navigation flex justify-center mt-4">
         {images.map((image, index) => (
           <button
             key={index}
@@ -44,7 +44,7 @@ const Slider = () => {
             <img src={image} className='w-[60px] h-[50px]' alt={`Image ${index + 1}`} />
           </button>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };

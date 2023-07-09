@@ -1,6 +1,6 @@
 function HeaderTop() {
     return (
-        <div className="w-full bg-white">
+        <div className="w-full bg-white lg:block md:block hidden">
             <div className="container mx-auto">
                 <div className="flex flex-row gap-x-5  justify-center items-center py-1">
                     <div className="flex flex-row mr-3 gap-1 items-center">

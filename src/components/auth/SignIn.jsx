@@ -55,7 +55,6 @@ const SignIn = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
                 type="text"
-
                 placeholder="Enter your E-mail"
                 className={`input input-bordered w-full max-w-xs`} />
             </div>
