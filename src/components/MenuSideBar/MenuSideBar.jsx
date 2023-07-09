@@ -43,7 +43,7 @@ function MenuSideBar() {
 				categories.map(item=>(
 					<li className=" group">
 						<div className="collapse collapse-arrow bg-base-200 rounded-none">
-						<input type="radio" name="glaazex-accordion" checked='checked' /> 
+						<input type="radio" name="glaazex-accordion" /> 
       <div className="collapse-title text-xl font-medium bg-white">
 	  <div className="flex items-center ">
 					<img className="w-[30px]" src={item.img} alt="" />
