@@ -19,7 +19,7 @@ function Navbar() {
     <div className="w-full bg-[white] md:bg-[#b1beb5] lg:bg-[#b1beb5]  shadow-lg z-10 box-border">
       <div className="container mx-auto navbar box-border">
         <div className="flex flex-1 flex-row  w-full justify-between box-border">
-          <div className="flex  place-content-around lg:basis-1/3 md:basis-1/3 basis-2/4 ">
+          <div className="flex  justify-start lg:basis-1/3 md:basis-1/3 basis-2/4 ">
           {/* <div className="flex  place-content-around w-full lg:w-auto md:w-auto "> */}
           <div className="lg:mr-[30] md:mr-[30px] mr-0">
             <MenuSideBar/>
@@ -48,12 +48,12 @@ function Navbar() {
               </div>
             </label>
           </div>
-          <div className="w-full lg:block md:block hidden">
+          {/* <div className="w-full lg:block md:block hidden"> */}
 
           {
             (user && user?.uid) ? <AfterSignIn /> : <BeforeSignIn />
           }
-          </div>
+          {/* </div> */}
         </div>
       </div>
     </div>

@@ -18,7 +18,7 @@ function AfterSignIn() {
           });
     }
     return (
-        <div className="dropdown dropdown-end">
+        <div className="dropdown dropdown-end lg:block md:block hidden">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-[30px] rounded-full">
                     <img src="/public/images/user.svg"  className="w-full object-cover"/>
