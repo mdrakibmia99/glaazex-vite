@@ -24,14 +24,14 @@ const PaymentOption = () => {
       ]
   return (
     <section className="container  mx-auto min-h-screen">
-    <h1 className="text-3xl text-center">SELECT PAYMENT METHOD</h1>
-     <div className="flex flex-row flex-wrap gap-3  justify-center px-2">
+    <h1 className="text-3xl text-center mb-5">SELECT PAYMENT METHOD</h1>
+     <div className="flex flex-row flex-wrap gap-3  justify-center px-5 md:px-2 lg:px-2">
       {
           paymentOption.map((PayOpt,index)=>(
 
       <div key={index}
       onClick={(()=>setSelect(index))}
-      className={`relative  overflow-hidden shadow-[#b0beb5]  shadow-md  border-2 border-black  w-[200px] h-[227px] rounded-xl flex flex-col items-center justify-center gap-2 hover:scale-[0.97] duration-500 ease-in-out`}> 
+      className={`relative  overflow-hidden shadow-[#b0beb5]  shadow-md  border-2 border-black  w-[100px] h-[127px] md:w-[200px] md:h-[227px]  lg:w-[200px] lg:h-[227px] rounded-xl flex flex-col items-center justify-center gap-2 hover:scale-[0.97] duration-500 ease-in-out`}> 
       {
         select==index?    <span className={`absolute top-[-25px] left-[-5px] ${style.payment_select}`} > L </span>:""
       }

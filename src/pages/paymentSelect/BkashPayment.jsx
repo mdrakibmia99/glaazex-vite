@@ -5,8 +5,8 @@ function BkashPayment() {
     const { register, reset, handleSubmit, formState: { errors } } = useForm()
     const onSubmit = (data) => console.log(data)
   return (
-    <section>
-        <div>
+    <section className='w-full '>
+        <div className=''>
       {/* <form onSubmit={handleSubmit(handlePayment)}>
       <div className="form-control w-full">
             <label className="label">
@@ -49,7 +49,7 @@ function BkashPayment() {
         </form> */}
 
 
-<form onSubmit={handleSubmit(onSubmit)}>
+<form onSubmit={handleSubmit(onSubmit)} className='px-5 lg:px-0 md:px-0'>
 <div className="form-control w-full">
             <label className="label">
               <span className="label-text">Amount</span>
