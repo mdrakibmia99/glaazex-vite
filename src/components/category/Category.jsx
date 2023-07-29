@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { categories } from "../../database/productsData"
 const Category = () => {
     return (
@@ -10,9 +11,9 @@ const Category = () => {
          <div className='container mx-auto m-[5px]'>
          <div className="flex flex-wrap justify-center  gap-1 my-2 mx-auto w-[99%] ">
                 {
-                    categories.map(categoric =>{
+                    categories.map((categoric,index) =>{
                       return (
-                        <a href='www.google.com' target='_blank' key={categoric.id} className="flex flex-col hover:shadow-md p-3 items-center mx-auto justify-center  bg-[#ffffff] w-[110px] h-[110px] lg:w-[130px] lg:h-[130px]  text-dark rounded border-solid border-2 border-[#d5e4db] no-underline whitespace-nowrap">
+                        <Link key={index} to={`/allProducts/${categoric.product_name}`}  className="flex flex-col hover:shadow-md p-3 items-center mx-auto justify-center  bg-[#ffffff] w-[110px] h-[110px] lg:w-[130px] lg:h-[130px]  text-dark rounded border-solid border-2 border-[#d5e4db] no-underline whitespace-nowrap">
                         <div className="w-[40px] h-[40px] lg:w-[60px] lg:h-[60px]">
                             <img
                              src={categoric.img}
@@ -21,7 +22,7 @@ const Category = () => {
 
                        <h6 className="text-[0.8rem]">{categoric.product_name}</h6>
                 
-                    </a>
+                    </Link>
                       )
                     })
                 }
