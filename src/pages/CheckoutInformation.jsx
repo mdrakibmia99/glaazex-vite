@@ -8,7 +8,7 @@ const CheckoutInformation = () => {
     const [promotionalCode, setPromotionalCode] = useState(false);
     const { register, reset, handleSubmit, formState: { errors } } = useForm()
     const navigate = useNavigate()
-  const handleSelectChange = (data) => {
+  const handleSelectChange = (event) => {
     setSelectedValue(event.target.value);
   };
   const handleFormSubmit=(data)=>{
@@ -68,13 +68,13 @@ const CheckoutInformation = () => {
             </div>
             <div className="form-control w-full mb-3">
                 <label className="label p-0">
-                    <span className="label-text font-light text-base">RECIPIENT ADDRESS *</span>
+                    <span className="label-text font-light text-base">Delivery Charge *</span>
                 </label>
                 <div className="flex lg:flex-row flex-col gap-3 mb-3">
                 <div className="w-full lg:max-w-xs">
 
                     <div className="p-[5px] rounded-lg">
-                    <select value={selectedValue} onChange={handleSelectChange} className="select select-bordered w-full lg:max-w-xs bg-[#eeeeee] outline-none border-none text-base">
+                    <select {...register("select")} value={selectedValue} onChange={handleSelectChange} className="select select-bordered w-full lg:max-w-xs bg-[#eeeeee] outline-none border-none text-base">
                         <option value={initValue} className="text-base bg-base-200 hover:bg-slate-400">Inside Dhaka</option>
                         <option value="100" className="text-base bg-base-200">Dhaka Subarea</option>
                         <option value="120" className="text-base bg-base-200">Outside Dhaka</option>

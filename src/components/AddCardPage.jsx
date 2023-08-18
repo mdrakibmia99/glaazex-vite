@@ -105,7 +105,7 @@ const AddCardPage = ({ cartChecked, setCardChecked }) => {
               </div>
               <Link
                 onClick={() => setCardChecked(!cartChecked)}
-                to={'/order/product'} className="block text-center w-full mb-5 bg__bg rounded-md py-2 text-black font-bold hover:cursor-pointer hover:bg-[#939f90] ease-in-out duration-200">ORDER NOW</Link>
+                to={'order/product/Information'} className="block text-center w-full mb-5 bg__bg rounded-md py-2 text-black font-bold hover:cursor-pointer hover:bg-[#939f90] ease-in-out duration-200">ORDER NOW</Link>
             </div>
           }
           </div>
