@@ -8,13 +8,13 @@ const CheckoutInformation = () => {
     const [promotionalCode, setPromotionalCode] = useState(false);
     const { register, reset, handleSubmit, formState: { errors } } = useForm()
     const navigate = useNavigate()
-  const handleSelectChange = (event) => {
+  const handleSelectChange = (data) => {
     setSelectedValue(event.target.value);
   };
-  const handleFormSubmit=(e)=>{
+  const handleFormSubmit=(data)=>{
     // e.preventDefault()
-    console.log(e)
-    // navigate('/payment/option')
+    console.log(data,"check datra")
+    navigate('/payment/option')
 
   }
   

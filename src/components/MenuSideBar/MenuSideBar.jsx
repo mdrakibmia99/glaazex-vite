@@ -52,12 +52,12 @@ function MenuSideBar() {
 											</div>
 											<div className="collapse-content block bg-white ">
 												<ul className='leading-10'>
-													<li ><Link to={`/allProducts/${item.product_name}`}> {item.product_name}</Link> </li>
+													<li ><Link to={`/allProducts/${item.product_name}`} onClick={() => setSideNavBar(!sideNavBar)}> {item.product_name}</Link> </li>
 													{
 
 														Object.keys(item.sub_category)?.map(keyName => (
 
-															<li className="border-t-2" key={keyName}><Link to={`/sub_category/${item.sub_category[keyName]}`}> {item.sub_category[keyName]}</Link> </li>
+															<li className="border-t-2" key={keyName}><Link to={`/sub_category/${item.sub_category[keyName]}`} onClick={() => setSideNavBar(!sideNavBar)}> {item.sub_category[keyName]}</Link> </li>
 														))
 
 													}
