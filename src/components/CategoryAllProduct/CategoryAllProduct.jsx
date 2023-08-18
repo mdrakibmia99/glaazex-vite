@@ -11,7 +11,7 @@ const CategoryAllProduct = () => {
   
   
     return (
-      <section >
+      <section className="container my-5 mx-auto" >
         <h1>
           Category : <span> {productType}</span>
         </h1>

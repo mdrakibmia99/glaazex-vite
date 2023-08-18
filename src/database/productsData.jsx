@@ -243,15 +243,13 @@ export const allProductData = [
         price: 150,
         product_title: "This product for asdf  af  all person",
         product_category: "Men Undergarments",
-        product_image: "https://backend.pndservicebd.com//storage/upload/products/thumbnail/1768153516227703.jpeg",
+        product_image: "https://i.ibb.co/nPXt9sF/Embla-Baby-Moisture-Wash-And-Shampoo.jpg",
         product_details: {
             overview: "This product from Bd.",
             product_images: [
-                { id: 1, imageUrl: 'https://backend.pndservicebd.com//storage/upload/products/thumbnail/1768153516227703.jpeg', alt: 'Image 1' },
-                { id: 3, imageUrl: 'https://backend.pndservicebd.com//storage/upload/products/thumbnail/1757077559730677.jpeg', alt: 'Image 3' },
-                { id: 4, imageUrl: 'https://backend.pndservicebd.com//storage/upload/products/thumbnail/1734343581280409.jpg', alt: 'Image 3' },
-                { id: 2, imageUrl: 'https://backend.pndservicebd.com//storage/upload/products/multi-image/1734710256623680.jpg', alt: 'Image 2' },
-                { id: 5, imageUrl: 'https://backend.pndservicebd.com//storage/upload/products/multi-image/1734343581408951.jpg', alt: 'Image 3' },
+                { id: 1, imageUrl: 'https://i.ibb.co/nPXt9sF/Embla-Baby-Moisture-Wash-And-Shampoo.jpg', alt: 'Image 1' },
+                { id: 2, imageUrl: 'https://i.ibb.co/GC6pg1S/baby-Slider2.jpg', alt: 'Image 2' },
+                
                 // Add more cart items as needed
             ]
         },

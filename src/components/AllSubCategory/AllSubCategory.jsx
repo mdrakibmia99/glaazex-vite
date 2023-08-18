@@ -16,9 +16,9 @@ const AllSubCategory = () => {
                 {/* product card use for product img and name show */}
                 {
                     filterData.map((product,index) => (
-                        <>
+                       
                             <ProductCart key={index} product={product} />
-                        </>
+                        
                     ))
                 }
             </div>

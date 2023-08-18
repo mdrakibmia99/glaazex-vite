@@ -20,7 +20,7 @@ const Category = () => {
                              className="w-full" />
                         </div>
 
-                       <h6 className="text-[0.8rem]">{categoric.product_name}</h6>
+                       <h6 className="text-[0.8rem] whitespace-pre-wrap text-center mt-1 ">{categoric.product_name}</h6>
                 
                     </Link>
                       )

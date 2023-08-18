@@ -25,9 +25,9 @@ const ProductDetail = ({ productDetail }) => {
 
   return (
     <div className='relative mt-5 lg:w-9/12 md:w-9/12 w-full  mx-auto flex justify-center items-center '>
-      <div className='w-full shadow p-5 rounded shadow-green-400'>
+      <div className='w-full shadow p-5 rounded shadow-green-400 '>
 
-        <div className='w-full grid md:flex lg:flex sm:w-full '>
+        <div className='w-full grid md:flex lg:flex sm:w-full mt-5'>
           <SelectImage detailImage={detailImage} />
           <SelectDetails productData={productData} />
         </div>
