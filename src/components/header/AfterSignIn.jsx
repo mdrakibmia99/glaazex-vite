@@ -4,7 +4,7 @@ import { Navigate } from "react-router-dom";
 
 
 
-function AfterSignIn() {
+function AfterSignIn({dropdownStyle}) {
     const {LogOut} = useContext(AuthContext)
 
     const handleLogOut=()=>{
@@ -18,7 +18,7 @@ function AfterSignIn() {
           });
     }
     return (
-        <div className="dropdown dropdown-end lg:block md:block hidden">
+        <div className={`dropdown ${dropdownStyle} lg:block md:block hidden`}>
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-[30px] rounded-full">
                     <img src="/public/images/user.svg"  className="w-full object-cover"/>

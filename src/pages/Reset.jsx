@@ -1,5 +1,5 @@
 import { useContext, useState } from "react"
-import { toast } from "react-hot-toast"
+import { Toaster, toast } from "react-hot-toast"
 import { useNavigate } from "react-router-dom"
 import { AuthContext } from "../contexts/UserContext"
 
@@ -55,6 +55,7 @@ const Reset = () => {
              
           
         </div>
+        <Toaster/>
       </div>
     </>
   )

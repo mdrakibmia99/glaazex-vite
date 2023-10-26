@@ -9,6 +9,7 @@ import { Link } from "react-router-dom"
 import MenuSideBar from "../MenuSideBar/MenuSideBar"
 
 function Navbar() {
+  const dropdownStyle="dropdown-end";
   const { user, loading } = useContext(AuthContext)
   const { addItems } = useContext(CartContext)
   const [cartChecked, setCardChecked] = useState(true)
@@ -16,7 +17,7 @@ function Navbar() {
     return <HomeLoading></HomeLoading>
   }
   return (
-    <div className="w-full bg-[white] md:bg-[#b1beb5] lg:bg-[#b1beb5]  shadow-lg z-10 box-border">
+    <section className="w-full bg-[white] md:bg-[#b1beb5] lg:bg-[#b1beb5]  shadow-lg z-10 box-border">
       <div className="container mx-auto navbar box-border">
         <div className="flex  flex-row  w-[98%] justify-between box-border">
           <div className="flex  justify-start basis-5/6 lg:basis-1/3  md:basis-1/3 ">
@@ -51,13 +52,16 @@ function Navbar() {
           {/* <div className="w-full lg:block md:block hidden"> */}
 
           {
-            (user && user?.uid) ? <AfterSignIn /> : <BeforeSignIn />
+            (user && user?.uid) ? <AfterSignIn dropdownStyle={dropdownStyle}/> : <BeforeSignIn />
           }
           {/* </div> */}
         </div>
       </div>
     </div>
-    </div>
+
+   
+
+    </section>
   )
 }
 
