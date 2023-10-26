@@ -7,7 +7,7 @@ import BottomNavbar from "../components/BottomNavbar/BottomNavbar";
 const Main = () => {
     return (
         <div className="relatve">
-            <div className="fixed top-0 right-0 left-0 z-20">
+            <div className="">
              <HeaderTop></HeaderTop>
             <Navbar></Navbar>
             </div>
